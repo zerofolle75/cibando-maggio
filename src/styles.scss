@@ -1,1 +1,30 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~primeicons/primeicons.css";
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+nav {
+  padding-left: 10px!important;
+}
+
+.logo {
+  width: 60px;
+  margin-right: 8px;
+}
+
+.bg-dark {
+  background-color: #8e210b!important;
+}
+
+.contenitore {
+  padding: 16px;
+}
+
+h3 {
+  font-family: "Homemade Apple", cursive;
+  font-size:40px;
+  text-shadow: black 2px 3px 3px;
+}
