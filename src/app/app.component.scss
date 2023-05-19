@@ -1,19 +1,7 @@
-.contenitore {
+@import"../../src/styles/colori.scss";
 
-  h2 {
-    color: rgb(0, 0, 0);
-    font-size: 50px;
-  }
-
-  .paragrafo {
-    span {
-      font-weight: bold;
-      color: red;
-    }
-  }
-
-  .testoEvidenziato {
-    background-color: yellow;
-    width: 565px;
-  }
+footer{
+  clear:both;
+  background-color:$primary-color-1;
+  height: 150px;
 }

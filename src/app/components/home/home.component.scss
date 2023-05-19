@@ -1,0 +1,21 @@
+@import "../../../../src/styles.scss";
+
+.contenitore {
+
+  h2 {
+    color: $secondary-color-1;
+    font-size: 50px;
+  }
+
+  .paragrafo {
+    span {
+      font-weight: bold;
+      color: $primary-color-3;
+    }
+  }
+
+  .testoEvidenziato {
+    background-color: $primary-color-4;
+    width: 565px;
+  }
+}

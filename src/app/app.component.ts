@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'cibando-maggio';
-  evidenziato = false;
+
   constructor() {
     console.log('qui sono dentro al costruttore')
   }
@@ -16,9 +16,7 @@ export class AppComponent {
 console.log('qui sono nell onInit')
   }
 
-  onEvidenziato() {
-      this.evidenziato = !this.evidenziato;
-  }
+
 
 
 }
