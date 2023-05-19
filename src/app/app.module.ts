@@ -8,12 +8,14 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselComponent } from './shared/carousel/carousel.component';
 import { FormsModule } from '@angular/forms';
 import { HeaderComponent } from './shared/header/header.component';
+import { RecipesComponent } from './components/recipes/recipes.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CarouselComponent,
-    HeaderComponent
+    HeaderComponent,
+    RecipesComponent
   ],
   imports: [
     BrowserModule,
