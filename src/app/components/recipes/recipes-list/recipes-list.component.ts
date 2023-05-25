@@ -9,8 +9,9 @@ import { RecipeService } from 'src/app/services/recipe.service';
 })
 export class RecipesListComponent implements OnInit{
 
- //creo una var che mi conterrà le scarpe della chiamata
+ //creo una var che mi conterrà le ricette della chiamata
  ricette: Recipe[];
+ titoloRicevuto: string;
 
  constructor(private recipeService: RecipeService ){}
 
@@ -26,4 +27,8 @@ export class RecipesListComponent implements OnInit{
      }
    })
  }
+
+  riceviMessaggio(e: any){
+    this.titoloRicevuto == e ? this.titoloRicevuto = '' : this.titoloRicevuto = e;
+  }
 }

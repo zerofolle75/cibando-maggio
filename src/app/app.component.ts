@@ -9,14 +9,10 @@ export class AppComponent {
   title = 'cibando-maggio';
 
   constructor() {
-    console.log('qui sono dentro al costruttore')
+  console.log('qui sono dentro al costruttore')
   }
 
   ngOnInit(): void {
-console.log('qui sono nell onInit')
+  console.log('qui sono nell onInit')
   }
-
-
-
-
 }
