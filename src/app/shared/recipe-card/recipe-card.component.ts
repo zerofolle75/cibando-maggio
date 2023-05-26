@@ -13,5 +13,4 @@ export class RecipeCardComponent {
   inviaTitolo(titolo: string){
     this.messaggio.emit(titolo);
   }
-
 }

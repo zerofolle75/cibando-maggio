@@ -1,7 +1,76 @@
+@import "~primeicons/primeicons.css";
 @import"../../src/styles/colori.scss";
 
 footer{
   clear:both;
   background-color:$primary-color-1;
-  height: 150px;
+  color: $secondary-color-2;
+
+  .container{
+      display: flex;
+      padding: 20px;
+
+        .logo-footer{
+          float:left;
+          margin-right: 8px ;
+          width: 40px;
+          height: auto;
+          border: none;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .container-address{
+          width:25%;
+          text-align: justify;
+          font-size: 15px;
+          font-weight: 500;
+          list-style-type: none;
+        }
+
+        .container-menu{
+          text-align: justify;
+          padding: 5px;
+          width:25%;
+          font-size: 15px;
+          font-weight: 500;
+          list-style-type: none;
+          }
+
+        .footer-company-name{
+          font-size: 20px;
+          font-weight: bold;
+          padding: 5px;}
+
+          a{
+            text-decoration: none;
+            color: $secondary-color-2;
+          }
+          .footer-list {
+            font-size: 15px;
+            text-align: justify;
+          }
+          .footer-title{
+            font-size: 18px;
+            font-weight: bold;
+          }
+          .footer-icons{
+            text-align: left;
+            display: inline-block;
+            font-size: 40px;
+          }
+          #logo-icon{
+            padding:5px;
+          }
+  }
+  .footer-copyright{
+    margin-bottom: -19px;
+    text-align: center;
+    margin-top: -23px;
+    font-size: 16px;
+    height: 35px;
 }
+
+
+}
+
