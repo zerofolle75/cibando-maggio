@@ -10,7 +10,21 @@ export class RecipeCardComponent {
   @Input() recipes: Recipe[];
   @Output() messaggio = new EventEmitter();
 
-  inviaTitolo(titolo: string){
-    this.messaggio.emit(titolo);
+  inviaTitolo(titolo: string, diff: number){
+    const valoriDaInviare= {
+      titolo:titolo,
+      diff: diff,
+    }
+    this.messaggio.emit(valoriDaInviare);
   }
+
+accorciaDescrizione(descrizione): number {
+  const lunghezzaMassima = 240;
+  if(descrizione.length <= lunghezzaMassima) {
+    return lunghezzaMassima;
+  } else {
+    let ultimaPosizioneSpazio = descrizione.indexOf(' ', lunghezzaMassima);
+    return ultimaPosizioneSpazio;
+  }
+}
 }

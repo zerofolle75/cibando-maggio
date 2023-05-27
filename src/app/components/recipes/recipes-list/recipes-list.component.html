@@ -1,7 +1,10 @@
 <div id="container-title">
   <h2>Le nostre ricette:</h2>
-  <h5 class="list-title">{{titoloRicevuto}}</h5>
-  <p class="list-difficulty">{{difficoltaRicevuta}}</p>
+  <div class="container-list">
+    <p><span class="list-title">{{titoloRicevuto}}</span>
+    <br>
+   {{difficoltaRicevuta}}</p>
+  </div>
 </div>
 <div>
   <app-recipe-card [recipes]="ricette" (messaggio)="riceviMessaggio($event)"></app-recipe-card>

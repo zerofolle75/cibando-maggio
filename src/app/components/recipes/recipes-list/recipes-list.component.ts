@@ -12,7 +12,7 @@ export class RecipesListComponent implements OnInit{
  //creo una var che mi conterrà le ricette della chiamata
  ricette: Recipe[];
  titoloRicevuto: string;
- difficoltaRicevuta: string;
+ difficoltaRicevuta: number;
 
  constructor(private recipeService: RecipeService ){}
 
@@ -29,6 +29,7 @@ export class RecipesListComponent implements OnInit{
    })
  }
  riceviMessaggio(e: any){
-  this.titoloRicevuto == e ? this.titoloRicevuto = '' : this.titoloRicevuto = e;
+  this.titoloRicevuto == e.titolo ? this.titoloRicevuto = '' : this.titoloRicevuto = e.titolo;
+  this.difficoltaRicevuta = e.diff;
 }
 }

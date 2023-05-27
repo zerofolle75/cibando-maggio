@@ -1,1 +1,63 @@
-<p>registration works!</p>
+  <div class="container h-100">
+    <div class="container-form">
+
+        <div class="register-descr">
+          <h2 class="title-register">Registrati</h2>
+          <p class="p-register-descr">Registrati ora e approfitta dei vantaggi di My Account.</p>
+          <ul class="register-advantages">
+            <li>Salvare le tue ricette preferite</li>
+            <li>Scaricare i ricettari di Cibando</li>
+            <li>Ricevere aggiornamenti via email sulle ultime ricette</li>
+          </ul>
+        </div>
+
+        <form class="cibando-form" #f= "ngForm" (ngSubmit)="onSubmit(f.value)">
+          <div class="row">
+            <label for="username" class="form-label">Nome*</label>
+            <input type="text" id="username" class="form control" name="nome" ngModel
+            placeholder="Nome">
+          </div>
+        <div class="row">
+          <label for="email"class="form-label">Email*</label>
+          <input type="email" id="email" class="form control" name="mail" ngModel placeholder="E-mail">
+        </div>
+        <div class="row">
+          <label for="pwd"class="form-label">Password*</label>
+          <input type="password" id="password" class="form control" name="password" ngModel placeholder="Password">
+        </div>
+        <div class="row">
+          <label for="pwd_r"class="form-label">Conferma password *</label>
+          <input type="password2" id="confermaPassword " class="form control" name="confermaPassword"  ngModel placeholder="Conferma password">
+        </div>
+        <div class="readPrivacy">
+          <input type="checkbox" class="form-label" id="condizioni-uso" value="" name="accetto"  ngModel>
+          <label for ="condizioni-uso" class="checkbox-label" >
+          Dichiaro di aver preso visione dell'<a href="#">l'informativa</a>fornita ai sensi dell'art. 13 del Regolamento (UE) 2016/679
+          </label>
+        </div>
+
+        <div class="readPrivacy">
+          <input type="checkbox" class="form-label" id="condizioni-uso" value="" name="accetto"  ngModel>
+          <label for ="condizioni-uso" class="checkbox-label" >
+          Desidero ricevere la <a href="#">newsletter</a> di Cibando
+          </label>
+        </div>
+
+        <div class="readPrivacy">
+          <input type="checkbox" class="form-label" id="condizioni-uso" value="" name="accetto"  ngModel>
+          <label for ="condizioni-uso" class="checkbox-label" >
+          Accetto <a href="#">Termini e Condizioni d'Uso del My Account</a>
+          </label>
+        </div>
+
+				<div id="container-btn">
+					<button type="submit" id="btn-invia">Registrati</button>
+				</div>
+      </form>
+
+     </div>
+     <div class="form-image">
+      <img class="img-responsive" src="../../../../assets/images/register-img.jpg">
+    </div>
+  </div>
+
