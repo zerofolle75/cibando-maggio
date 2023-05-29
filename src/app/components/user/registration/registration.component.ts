@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+
 
 
 @Component({
@@ -7,9 +9,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./registration.component.scss']
 })
 export class RegistrationComponent {
+  form = new FormGroup({
+    name: new FormControl ('', Validators.required),
+    email: new FormControl ('', [Validators.email, Validators.required]),
+    password: new FormControl ('', Validators.required),
+    confermaPassword: new FormControl ('',Validators.required),
+    accetto: new FormControl (false, Validators.requiredTrue)
+  });
 
-  onSubmit(form: any){
-    console.log(form);
+  onSubmit(){
+    console.log(this.form.value);
   }
 
 }
