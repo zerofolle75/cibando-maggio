@@ -20,5 +20,11 @@
       font-size: 16px;
       color: $primary-color-1;
     }
+    p.list-difficulty {
+       margin-top: -17px;
+       span{
+        font-weight: bold;
+       }
+  }
   }
 }

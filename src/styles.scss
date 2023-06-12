@@ -30,4 +30,17 @@ h3 {
   text-shadow: $secondary-color-1 2px 3px 3px;
 }
 
+.p-password{
+  display:block !important;
+}
+
+.p-inputtext, .p-password-input{
+  width: 100% !important;
+
+}
+
+.p-input-icon-right > .p-inputtext {
+ border: none !important;
+}
+
 

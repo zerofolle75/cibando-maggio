@@ -13,26 +13,90 @@
     color: $primary-color-1;
   }
 
-.card-image{
-  height: 200px;
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+  .card-image{
+    height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
 
-.card-text{
-  text-align: justify;
-}
+  .card-text{
+    text-align: justify;
+  }
 
-.btn-primary{
+
+.container-btn {
   display: block;
-  width: 115px;
-  font-size: 16px;
-  font-weight: bold;
-  padding: 12px 4px;
-  margin: auto;
-  border-radius: 5px;
-  background-color:$primary-color-1;
-  border-color: $primary-color-1;
   text-align: center;
+  margin: 4px 2px;
+
+  .btn-primary{
+    //display: block;
+    width: 115px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 4px;
+    margin-right:  10px;
+    border-radius: 5px;
+    background-color:$primary-color-1;
+    border-color: $primary-color-1;
+    //text-align: center;
+  }
+
+   .btn-delete {
+    background-color:$primary-color-1;
+    border-color: $primary-color-1;
+    color: $secondary-color-2;
+    border-radius: 5px;
+    border: none;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer;
+  }
 }
 }
+  .title-modal-body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .paragraf-modal-body{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    text-align: center;
+  }
+  .modal-header{
+    background-color:$primary-color-1;
+    border-color: $primary-color-1;
+
+    button.btn-close{
+      border: 2px solid $secondary-color-2;
+      background-color: $secondary-color-2;
+    }
+  }
+
+  button.action-secondary.action-dismiss {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 15px;
+    padding: 17px 17px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    margin-right: 10px;
+    color: $primary-color-1;
+    border: 2px solid $primary-color-1;
+    background-color: transparent;
+  }
+  button.action-primary.action-delete {
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 15px;
+    padding: 17px 17px;
+    border-radius: 8px;
+    text-transform: uppercase;
+    margin-right: 20px;
+    color: $secondary-color-2;
+    border: 2px solid $primary-color-1;
+    background-color: $primary-color-1;
+  }

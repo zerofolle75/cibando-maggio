@@ -1,0 +1,24 @@
+<form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+<div class="form-outline mb-4">
+  <label class="forma-label" for="email"></label>
+  <input type="email" name="email" class="form-control" placeholder="Scrivi la tua mail" ngModel>
+</div>
+
+<div class="form-outline mb-4">
+  <label class="forma-label" for="password"></label>
+  <p-password name="password" class="form-control" placeholder="Scrivi la tua password" ngModel [toggleMask]="true" [feedback]="false"></p-password>
+</div>
+
+<button class="btn btn-primary" type="submit">Accedi</button>
+
+<div class="alert" *ngIf="loginError">
+  {{loginError}}
+</div>
+
+</form>
+
+<div>
+  Se non sei registrato <a routerLink="/registrazione">clicca qui</a> per registrarti
+</div>
+
+<p-toast position="bottom-right"></p-toast>

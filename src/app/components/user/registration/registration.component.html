@@ -4,55 +4,65 @@
     <div class="register-descr">
       <h2 class="title-register">Registrati</h2>
       <p class="p-register-descr">Registrati ora e approfitta dei vantaggi di My Account.</p>
-      <ul class="register-advantages">
-        <li>Salvare le tue ricette preferite</li>
-        <li>Scaricare i ricettari di Cibando</li>
-        <li>Ricevere aggiornamenti via email sulle ultime ricette</li>
-      </ul>
     </div>
 
     <form class="cibando-form" [formGroup]="form" (ngSubmit)="onSubmit()">
 
-      <div class="form-group">
+      <div class="d-flex flex-row align-items-center mb-4">
         <i class="fas fa-user fa-lg me-3 fa-fw" id="icon"></i>
-        <input type="text" id="username" class="form control" placeholder="Nome" formControlName="name">
-        <label for="username" class="form-label">Nome*</label>
-        <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Il nome è obbligatorio</p>
+        <div class="form-outline flex-fill mb-0">
+          <input type="text" id="username" class="form-control" placeholder="Nome" formControlName="name">
+          <label for="username" class="form-label">Nome*</label>
+          <p class="help is-danger" *ngIf="!form.get('name').valid && form.get('name').touched">Il nome è obbligatorio</p>
+        </div>
       </div>
 
-      <div class="form-group">
+      <div class="d-flex flex-row align-items-center mb-4">
         <i class="fas fa-envelope fa-lg me-3 fa-fw"id="icon"></i>
-        <input type="email" id="email" class="form control" placeholder="E-mail" formControlName="email">
-        <label for="email"class="form-label">E-mail*</label>
-        <p class="help is-danger" *ngIf="form.controls.email.hasError('required')&& form.get('name').touched">L'indirizzo email è obbligatorio</p>
-        <p class="help is-danger" *ngIf="form.controls.email.hasError('email')&& form.controls.email.touched">Questa email non è valida</p>
+        <div class="form-outline flex-fill mb-0">
+          <input type="email" id="email" class="form-control" placeholder="E-mail" formControlName="email">
+          <label for="email"class="form-label">E-mail*</label>
+          <p class="help is-danger" *ngIf="form.controls.email.hasError('required')&& form.get('email').touched">L'indirizzo email è obbligatorio</p>
+          <p class="help is-danger" *ngIf="form.controls.email.hasError('email')&& form.controls.email.touched">Formato email non valido</p>
+        </div>
+    </div>
+
+      <div class="d-flex flex-row align-items-center mb-4">
+        <i class="fas fa-lock fa-lg me-3 fa-fw" id="icon"></i>
+        <div class="form-outline flex-fill mb-0">
+          <p-password [toggleMask]="true" class="form-control" placeholder="Password" formControlName="password" strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"></p-password>
+          <label for="pwd"class="form-label">Password*</label>
+          <p class="help is-danger" *ngIf="!form.get('password').valid && form.get('password').touched">La password è obbligatoria</p>
+          <p class="help is-danger" id="container-pw" *ngIf="form.controls.password.hasError('pattern')&& form.controls.password.touched">
+            Lunghezza minima 8 caratteri, almeno una lettera maiuscola, una lettera minuscola,
+            un numero e un carattere speciale.
+          </p>
+        </div>
       </div>
 
-      <div class="form-group">
-        <i class="fas fa-lock fa-lg me-3 fa-fw"id="icon"></i>
-        <input type="password" id="password" class="form control" placeholder="Password" formControlName="password">
-        <label for="pwd"class="form-label">Password*</label>
-        <p class="help is-danger" *ngIf="!form.get('password').valid && form.get('password').touched">La password è obbligatoria</p>
-      </div>
-
-      <div class="form-group">
+      <div class="d-flex flex-row align-items-center mb-4">
         <i class="fas fa-key fa-lg me-3 fa-fw"id="icon"></i>
-        <input type="password" id="password" class="form control" placeholder="confermaPassword" formControlName="confermaPassword">
-        <label for="pwd"class="form-label">Conferma Password*</label>
-        <p class="help is-danger" *ngIf="!form.get('confermaPassword').valid && form.get('confermaPassword').touched">Reinserisci la password</p>
+        <div class="form-outline flex-fill mb-0">
+          <p-password [toggleMask]="true" class="form-control" placeholder="Conferma Password" formControlName="confermaPassword" strongRegex="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){8,16}$"></p-password>
+
+          <label for="pwd"class="form-label">Conferma Password*</label>
+          <p class="help is-danger" *ngIf="!form.get('confermaPassword').valid && form.get('confermaPassword').touched">Reinserisci la password</p>
+          <p class="help is-danger" *ngIf="form.getError('diversa') && form.get('confermaPassword').touched">Le password non corrispondono</p>
+        </div>
       </div>
 
-      <div class="form-field">
-        <input type="checkbox" class="form-label" id="condizioni-uso" value="" formControlName="accetto">
-        <label for ="condizioni-uso" class="checkbox-label" >
+
+      <div class="form-check d-flex justify-content-center mb-5">
+        <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3c" formControlName="accetto">
+        <label class="form-check-label" for="form2Example3">
           Ho letto e accetto <a href="#">Privacy Policy</a>
         </label>
-        <p class="help is-danger" *ngIf="!form.get('accetto').valid && form.get('accetto').touched">Campo obbligatorio</p>
+        <p class="help is-danger" id="invalid-feedback"*ngIf="!form.get('accetto').valid && form.get('accetto').touched">Campo obbligatorio</p>
       </div>
 
-      <div class="form-group">
+      <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
         <p *ngIf="form.valid">Il form è correttamente compilato</p>
-        <button type="submit" id="btn-invia" [disabled]="!form.valid">Registrati</button>
+        <button type="submit" class="btn btn-primary btn-lg"[disabled]="!form.valid">Registrati</button>
       </div>
 
     </form>
@@ -62,3 +72,4 @@
   </div>
   <div class="clear"></div>
 </div>
+

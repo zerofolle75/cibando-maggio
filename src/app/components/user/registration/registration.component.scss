@@ -12,11 +12,10 @@ p.help.is-danger {
   width: 100%;
   text-align: right;
   color: $primary-color-6;
-  margin-top: -40px;
+  margin-top: -35px;
   padding: 6px 25px 5px;
   font-size: 12px;
 }
-
 .container-registration{
   position: relative;
   width: 60%;
@@ -31,87 +30,84 @@ p.help.is-danger {
     padding: 2em;
     //background: #c9c4be;
 
-    .title-register {
-      text-align: center;
-      font-weight: 700;
-      color: $primary-color-1;
-    }
-    p.p-register-descr {
-      text-align: center;
-      font-size: 13px;
-      font-weight: 400;
-    }
-    ul.register-advantages {
-      font-size: 13px;
-      margin-bottom: 30px;
-    }
+    .register-descr {
+      padding: 5px;
 
-    .form-group {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-content: center;
-
-      input{
-        width: 85%;
-        height:35px;
-        padding: 5px;
-        border-radius: 5px;
-        border-width: 1px;
-        //border-color: #aaaaaa;
-      }
-
-      label{
-        text-align: left;
-        padding: 5px 45px;
-        font-size:14px;
-      }
-  }
-    #icon{
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      align-content: center;
-      padding: 10px;
-    }
-
-    .form-field {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: nowrap;
-      justify-content: center;
-      align-content: center;
-      align-items: center;
-      padding: 15px;
-      margin-top: -4px;
-      margin-bottom: 5px;
-    }
-    label.checkbox-label {
-      font-size: 14px;
-      margin-left: 8px;
-      text-decoration: none;
-
-      a {
-        text-decoration: none;
-        color:$primary-color-1;
+      h2.title-register {
+        text-align: center;
         font-weight: bold;
+        color:$primary-color-1;
+      }
 
+      p.p-register-descr {
+        text-align: center;
+        font-size: 12px;
+      }
     }
-  }
-  button#btn-invia {
-    display: block;
-    width: 110px;
-    height: 45px;
-    font-size: 16px;
-    font-weight: bold;
-    margin: auto;
-    margin-top: 5px;
-    border-radius: 5px;
-    background-color: $primary-color-1;
-    border-color: $primary-color-1;
-    color:$secondary-color-2;
-    text-align: center;
-}
+
+    i#icon {
+      position: relative;
+      top: -15px;
+      left: 4px;
+    }
+
+
+    label.form-label{
+      font-size: 13px;
+    }
+
+    p#container-pw {
+      font-size: .688rem;
+      line-height: 15px;
+      font-weight: 600;
+      width: 95%;
+      position: relative;
+      top: 10px;
+      bottom: 5px;
+      left: -17px;
+      text-align: justify;
+    }
+
+    input#form2Example3c {
+      width: 15px;
+      height: 15px;
+    }
+
+      label.form-check-label {
+        font-size: 14px;
+
+        a {
+          color: #8e210b;
+          text-decoration: none;
+          font-weight: bold;
+        }
+      }
+
+      p#invalid-feedback {
+        width: 100%;
+        text-align: right;
+        color: #c92316;
+        margin-top: -2px;
+        /* padding: 6px 25px 5px; */
+        font-size: 12px;
+      }
+
+      .d-flex.justify-content-center.mx-4.mb-3.mb-lg-4 {
+        margin-top: -30px;
+
+        p{
+          font-size: 12px;
+          margin-bottom: 12px;
+          margin-top: 12px;
+          margin-right: 5px;
+        }
+        }
+
+        button.btn.btn-primary.btn-lg {
+        background-color: $primary-color-1;
+        border-color: $primary-color-1;
+        }
+      }
   }
 
   .right {
@@ -126,8 +122,5 @@ p.help.is-danger {
       height: 650px;
       border-radius: 0 25px 25px 0;
     }
-
   }
-
-}
 
