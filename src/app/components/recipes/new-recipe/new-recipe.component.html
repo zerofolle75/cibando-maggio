@@ -11,47 +11,71 @@
 
                 <form class="mx-1 mx-md-4" [formGroup]="form" (ngSubmit)="onSubmit()">
 
+                  <div class="form-outline flex-fill mb-0">
+                    <label class="form-label" for="form3Example1c">Titolo Ricetta</label>
+                    <input type="text" id="form3Example1c" class="form-control" placeholder=" Titolo Ricetta" formControlName="titoloRicetta"/>
+                    <p class="help is-danger" *ngIf="!form.get('titoloRicetta').valid && form.get('titoloRicetta').touched">Campo obbligatorio</p>
+                    </div>
+
                     <div class="form-outline flex-fill mb-0">
-                      <label class="form-label" for="form3Example1c">Titolo Ricetta</label>
-                      <input type="text" id="form3Example1c" class="form-control" formControlName="titoloRicetta"/>
-                    </div>
-
-                    <div class="form-outline">
                       <label class="form-label" for="textAreaExample">Descrizione ricetta</label>
-                      <textarea class="form-control" id="textAreaExample" rows="4" formControlName="descrizioneRicetta"></textarea>
+                      <ckeditor [editor]="editor" [config]="editorConfig" formControlName="descrizioneRicetta" class="descrizione"></ckeditor>
                     </div>
 
-                    <div class="form-row align-items-center">
-                      <div class="col-auto my-1">
-                        <label class="mr-sm-2" for="inlineFormCustomSelect">Difficoltà</label>
-                        <select class="custom-select mr-sm-2" id="inlineFormCustomSelect" formControlName="difficolta">
-                          <option value="0"> </option>
-                          <option value="1">1</option>
-                          <option value="2">2</option>
-                          <option value="3">3</option>
-                          <option value="4">4</option>
-                          <option value="5">5</option>
-                        </select>
+                    <div class="container-diff">
+                      <p>Difficoltà: </p>
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" />
+                        <label class="form-check-label" for="inlineRadio1">1</label>
                       </div>
-                    </div>
+
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2" />
+                        <label class="form-check-label" for="inlineRadio2">2</label>
+                      </div>
+
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
+                        <label class="form-check-label" for="inlineRadio3">3</label>
+                      </div>
+
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
+                        <label class="form-check-label" for="inlineRadio3">4</label>
+                      </div>
+
+                      <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3"/>
+                        <label class="form-check-label" for="inlineRadio3">5</label>
+                      </div>
+                  </div>
 
                     <div class="form-check">
                       <input class="form-check-input" type="checkbox" value="" id="flexCheckIndeterminate" formControlName="pubblicazione">
                       <label class="form-check-label" for="flexCheckIndeterminate">Ricetta Pubblicata</label>
                     </div>
 
+                    <div class="form-outline flex-fill mb-0" id="form-url">
+                      <i class="fa-solid fa-link"></i>
+                      <div class="form-outline flex-fill mb-0">
+                        <input type="text" id="form3Example1c" class="form-control" placeholder=" Upload Image URL"formControlName="imgNewRecipe">
+                        <p class="help is-danger" *ngIf="!form.get('imgNewRecipe').valid && form.get('imgNewRecipe').touched">Campo obbligatorio</p>
+                      </div>
+                    </div>
+
                     <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-                      <button type="submit" class="btn btn-primary btn-lg">Aggiungi</button>
+                      <p id="sms-success" *ngIf="form.valid">Ricetta aggiunta con successo</p>
+                      <button type="submit" class="btn btn-primary btn-lg"[disabled]="!form.valid">Aggiungi</button>
                     </div>
                 </form>
 
               </div>
                 <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                   <div class="dropZone">
-                    <div class="text-center">
-                      <input class="form-control" type="file" >
-                      <button type="submit" class="btn btn-success">Upload</button>
-                    </div>
+
+                    <img src="https://www.lospicchiodaglio.it/img/news/sapete-cos-e-il-junk-food.jpg"
+                    class="img-fluid" alt="Sample image">
+
                   </div>
                 </div>
 

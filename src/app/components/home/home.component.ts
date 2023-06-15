@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import { Recipe } from 'src/app/models/recipe.model';
 import { UserService } from 'src/app/services/user.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
@@ -6,12 +6,13 @@ import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
  @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  styleUrls: ['./home.component.scss'],
 })
 
 export class HomeComponent implements OnInit{
   ricette: Recipe[];
   evidenziato=false;
+
 
   titolo= 'ecco il titolo della modale ';
 
@@ -21,6 +22,7 @@ export class HomeComponent implements OnInit{
   email: string;
 
 constructor(private userService: UserService, private modalService:NgbModal){}
+
 
 
 ngOnInit(): void {

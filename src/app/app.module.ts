@@ -9,6 +9,9 @@ import { DividerModule } from 'primeng/divider';
 import { PaginatorModule } from 'primeng/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import { ToastModule } from 'primeng/toast';
+import { CookieService } from 'ngx-cookie-service';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 
 import { AppComponent } from './app.component';
 import { CarouselComponent } from './shared/carousel/carousel.component';
@@ -21,6 +24,7 @@ import { RecipesListComponent } from './components/recipes/recipes-list/recipes-
 import { RegistrationComponent } from './components/user/registration/registration.component';
 import { NewRecipeComponent } from './components/recipes/new-recipe/new-recipe.component';
 import { LoginComponent } from './components/user/login/login.component';
+import { ProfileComponent } from './components/user/profile/profile.component';
 
 
 
@@ -36,7 +40,8 @@ import { LoginComponent } from './components/user/login/login.component';
     RecipesListComponent,
     RegistrationComponent,
     NewRecipeComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -49,10 +54,11 @@ import { LoginComponent } from './components/user/login/login.component';
     DividerModule,
     PaginatorModule,
     HttpClientModule,
-    ToastModule
-
+    ToastModule,
+    CKEditorModule
   ],
-  providers: [],
+
+  providers: [CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

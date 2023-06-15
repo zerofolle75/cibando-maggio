@@ -3,6 +3,7 @@ import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from 'src/app/services/user.service';
+import { take, first, Observable, map } from 'rxjs';
 
 
 @Component({
@@ -23,8 +24,14 @@ export class RecipeCardComponent implements OnInit{
 
   ruolo: any;
 
+  totRicette: Recipe[];
 
-  constructor(private recipeService: RecipeService, private modalRecipe:NgbModal, private userService: UserService){}
+  recipes$: Observable<Recipe[]> = this.recipeService.getRecipesAsync().pipe(
+    map(res => res.filter(ricettaFiltrata => ricettaFiltrata.difficulty<5)),
+    map(res => this.totRicette = res)
+    );
+
+    constructor(private recipeService: RecipeService, private modalRecipe:NgbModal, private userService: UserService){}
 
    ngOnInit(): void {
     if (JSON.parse(localStorage.getItem('user')) !== null){
@@ -33,7 +40,10 @@ export class RecipeCardComponent implements OnInit{
         })
       }
 
-   this.recipeService.getRecipes().subscribe({
+   this.recipeService.getRecipes().pipe(
+    //unsubscribe
+    first()
+   ).subscribe({
      // il next verrà usato se la chiamata andrà a buon fine
 
      next: (res) => {

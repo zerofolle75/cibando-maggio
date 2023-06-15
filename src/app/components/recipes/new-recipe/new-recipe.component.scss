@@ -1,11 +1,29 @@
+@import "../../../../styles/colori.scss";
+
 #container-form{
+
+  p.help.is-danger {
+    width: 100%;
+    text-align: right;
+    color: $primary-color-6;
+    margin-top: -20px;
+    padding: 6px 25px 5px;
+    font-size: 12px;
+}
+
+p#sms-success {
+    font-size: 12px;
+    margin-top: 40px;
+    font-weight: bold;
+    color: $primary-color-6;
+}
 
   h2.form-title {
     text-align: center;
     font-size: 30px;
     font-weight: bold;
-    padding: 20px;
-    color: #8e210b;
+    padding: 10px;
+    color: $primary-color-6;
 }
 
 
@@ -28,8 +46,16 @@
     margin-bottom: 20px;
 }
 
-textarea#textAreaExample {
-  margin-bottom: 20px;
+.container-diff {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-content: center;
+  padding: 5px;
+  margin-bottom: -25px;
+
+  p{margin-right: 10px;}
 }
 label.mr-sm-2 {
   font-size: 14px;
@@ -52,10 +78,30 @@ input#form3Example1c {
   font-size: 14px;
 }
 
+div#form-url {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: center;
+  justify-content: space-around;
+  align-items: center;
+}
+
+i.fa-solid.fa-link {
+  padding: 10px;
+  /* top: 10px; */
+  background: $primary-color-6;
+  margin-right: 5px;
+  position: relative;
+  top: -10px;
+  color: white;
+  min-width: 50px;
+  text-align: center;
+}
 button.btn.btn-primary.btn-lg {
   margin: 30px;
-  background-color: #8e210b;
-  border: #8e210b;
+  background-color: $primary-color-6;
+  border: $primary-color-6;
 }
 
 }
@@ -63,7 +109,7 @@ button.btn.btn-primary.btn-lg {
     display: flex;
     padding: 50px;
     text-align: center;
-    border: dashed 3px #8e210b;
+    border: dashed 3px $primary-color-6;
     background-repeat: no-repeat;
     background-position: 50% 40px;
     width: 650px;
@@ -76,8 +122,7 @@ button.btn.btn-primary.btn-lg {
 
     button.btn.btn-success {
       margin-top: 20px;
-      background-color: #8e210b;
+      background-color: $primary-color-6;
       border: none;
   }
 }
-
