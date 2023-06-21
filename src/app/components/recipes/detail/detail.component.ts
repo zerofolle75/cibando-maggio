@@ -3,6 +3,7 @@ import { Recipe } from 'src/app/models/recipe.model';
 import { RecipeService } from 'src/app/services/recipe.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import { HttpClient } from '@angular/common/http';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-detail',
@@ -20,11 +21,20 @@ export class DetailComponent implements OnInit{
     private router: Router,
     private activatedroute:ActivatedRoute,
     private http:HttpClient,
+    private sanitizer: DomSanitizer
     ){}
 
    ngOnInit(): void {
     this.onGetRecipe();
    }
+
+  // Sanitizzazione del contenuto HTML
+  getSanitizedHTML(descrizione: string): SafeHtml {
+    const sanitizedDescription = this.sanitizer.bypassSecurityTrustHtml(descrizione);
+    return sanitizedDescription;
+  }
+
+
 
    //metodo di recupero parametri da url tramite snapshot
    onGetRecipe(): void{

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -10,14 +11,25 @@ export class AppComponent implements OnInit{
 
 
 
-  constructor() {
-
-  console.log('qui sono dentro al costruttore')
-  }
+  constructor(private userService: UserService){}
 
 
   ngOnInit(): void {
-  console.log('qui sono nell onInit')
-
+    console.log('qui sono nell onInit');
+    if(JSON.parse(localStorage.getItem('user')) !== null){
+      this.riceviRuolo();
+    }
   }
-}
+
+  riceviRuolo(){
+      this.userService.getUserProfile(JSON.parse(localStorage.getItem('user')).email).subscribe(
+        res => {
+          this.userService.userRole.next(res.role);
+        }
+      )
+    }
+  }
+
+
+
+

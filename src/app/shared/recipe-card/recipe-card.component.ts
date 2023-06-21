@@ -4,6 +4,7 @@ import { RecipeService } from 'src/app/services/recipe.service';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { UserService } from 'src/app/services/user.service';
 import { take, first, Observable, map } from 'rxjs';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser'
 
 
 @Component({
@@ -31,7 +32,10 @@ export class RecipeCardComponent implements OnInit{
     map(res => this.totRicette = res)
     );
 
-    constructor(private recipeService: RecipeService, private modalRecipe:NgbModal, private userService: UserService){}
+    constructor(private recipeService: RecipeService,
+      private modalRecipe:NgbModal,
+      private userService: UserService,
+      private sanitizer: DomSanitizer){}
 
    ngOnInit(): void {
     if (JSON.parse(localStorage.getItem('user')) !== null){
@@ -57,6 +61,24 @@ export class RecipeCardComponent implements OnInit{
    })
  }
 
+     // Sanitizzazione del contenuto HTML
+     getSanitizedHTML(descrizione: string): SafeHtml {
+      const tagliaDescrizione = this.accorciaDescrizioneNuova(descrizione);
+      const sanitizedDescription = this.sanitizer.bypassSecurityTrustHtml(tagliaDescrizione);
+      return sanitizedDescription;
+    }
+
+    // Funzione per accorciare la descrizione
+    accorciaDescrizioneNuova(descrizione: string): string {
+      const lunghezzaMassima = 198;
+      if (descrizione.length <= lunghezzaMassima) {
+        return descrizione.slice(0, lunghezzaMassima);
+      } else {
+        const ultimaPosizioneSpazio = descrizione.lastIndexOf(' ', lunghezzaMassima);
+        return descrizione.slice(0, ultimaPosizioneSpazio);
+      }
+    }
+
   inviaTitolo(titolo: string, diff: number){
     const valoriDaInviare= {
       titolo:titolo,
@@ -65,15 +87,15 @@ export class RecipeCardComponent implements OnInit{
     this.messaggio.emit(valoriDaInviare);
   }
 
-accorciaDescrizione(descrizione): number {
-  const lunghezzaMassima = 240;
-  if(descrizione.length <= lunghezzaMassima) {
-    return lunghezzaMassima;
-  } else {
-    let ultimaPosizioneSpazio = descrizione.indexOf(' ', lunghezzaMassima);
-    return ultimaPosizioneSpazio;
-  }
-}
+//accorciaDescrizione(descrizione): number {
+  //const lunghezzaMassima = 240;
+  //if(descrizione.length <= lunghezzaMassima) {
+    //return lunghezzaMassima;
+  //} else {
+    //let ultimaPosizioneSpazio = descrizione.indexOf(' ', lunghezzaMassima);
+    //return ultimaPosizioneSpazio;
+ //}
+//}
 
 open(content: any, titoletto?: string){
 
