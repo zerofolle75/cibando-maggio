@@ -1,0 +1,59 @@
+@import "../../../../../src/styles/colori.scss";
+
+.container-login {
+  width: 100%;
+  padding: 35px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  .form-control{
+    height: 50px;
+  }
+
+  h2.tile-login {
+    font-size: 30px;
+    font-weight: bold;
+    color: $primary-color-1;
+  }
+
+  p.p-login {
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .box-login-footer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+  .login-box-recover-pwd{
+    font-size: 12px;
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .btn-primary{
+    //display: block;
+    width: 115px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 12px 4px;
+    margin-right:  10px;
+    border-radius: 5px;
+    background-color:$primary-color-1;
+    border-color: $primary-color-1;
+    //text-align: center;
+  }
+  .container-registrati {
+    text-align: center;
+    font-size: 14px;
+    padding: 20px;
+}
+}

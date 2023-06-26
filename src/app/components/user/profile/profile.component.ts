@@ -13,6 +13,7 @@ export class ProfileComponent implements OnInit{
   dataCreazione: any;
   dataModifica: any;
 
+
   constructor(private userService: UserService){}
 
   ngOnInit(): void{
@@ -28,7 +29,7 @@ export class ProfileComponent implements OnInit{
         res => {
           this.user = res;
           this.dataCreazione = moment(this.user.createdAt).locale('it').format('dddd DD MMMM YYYY');
-          this.dataModifica = moment(this.user.createdAt).locale('it').format('DD MMMM YYYY');
+          this.dataModifica = moment(this.user.createdAt).locale('it').format('MMMM Do YYYY, h:mm:ss a');
         }
       )
     }

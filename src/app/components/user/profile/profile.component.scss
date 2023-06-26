@@ -1,0 +1,49 @@
+@import "../../../../styles/colori.scss";
+
+.container-profile{
+  position: relative;
+  width: 60%;
+  height: 650px;
+  margin: 30px auto;
+  border: 2px solid $primary-color-1;
+  border-radius: 25px;
+
+  #title-profile{
+    font-weight: bold;
+    color: $primary-color-1;
+    text-align: center;
+    padding: 30px 20px 10px;
+  }
+
+  .container-dati-personali{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: baseline;
+
+    .fa-solid, .fas {
+      font-weight: 900;
+      font-size: 15px;
+      padding: 10px;
+      background-color: #8e210b;
+      color: white;
+    }
+    p {
+      font-size: 18px;
+      font-weight: bold;
+      margin-left: 5px;
+    }
+  }
+
+  .form-outline {
+    padding: 5px 50px;
+  }
+
+  .form-label {
+    margin-bottom: 5px;
+    font-size: 14px;
+  }
+
+}

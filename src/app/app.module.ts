@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from 'primeng/password';
 import { DividerModule } from 'primeng/divider';
 import { RecipesModule } from './components/recipes/recipes.module';
+import { UserModule } from './components/user/user.module';
 
 import { HttpClientModule } from '@angular/common/http';
 import { ToastModule } from 'primeng/toast';
@@ -18,21 +19,12 @@ import { CarouselComponent } from './shared/carousel/carousel.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { HomeComponent } from './components/home/home.component';
 
-import { RegistrationComponent } from './components/user/registration/registration.component';
-import { LoginComponent } from './components/user/login/login.component';
-import { ProfileComponent } from './components/user/profile/profile.component';
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
     CarouselComponent,
     HeaderComponent,
     HomeComponent,
-    RegistrationComponent,
-    LoginComponent,
-    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +38,8 @@ import { ProfileComponent } from './components/user/profile/profile.component';
     HttpClientModule,
     ToastModule,
     CKEditorModule,
-    RecipesModule
+    RecipesModule,
+    UserModule
   ],
 
   providers: [CookieService],

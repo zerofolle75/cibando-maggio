@@ -1,15 +1,60 @@
-<h2>Ciao {{user.name}}, ecco i tuoi dati</h2>
-<ul>
-  <li>Nome: {{user.name}}</li>
-  <li>Email: {{user.email}}</li>
-  <li>Ruolo: {{user.role}}</li>
+<div class="container-profile">
+  <form>
+    <h2 id="title-profile">Ciao {{user.name}}</h2>
+    <div class="container-dati-personali">
+      <i class="fa-sharp fa-solid fa-pen"></i>
+      <p>I tuoi Dati:</p>
+    </div>
 
-  <li>Data Iscrizione al sito: {{dataCreazione}}</li>
-  <li>Data modifica profilo: {{dataModifica}}</li>
-</ul>
+      <div class="form-outline">
+        <label for="username" class="form-label">Nome:</label>
+        <input type="text"
+          [ngModel] = "user.name"
+          class="form-control"
+          name="name"
+          placeholder="Nome">
+      </div>
 
-SCARICA I NOSTRI TUTORIAL: <BR>
-TUTORIAL 1<BR>
-  TUTORIAL 2<BR>
-    TUTORIAL 3<BR>
+      <div class="form-outline">
+        <label for="email" class="form-label">Email:</label>
+        <input type="text"
+          [ngModel] = "user.email"
+          class="form-control"
+          name="email"
+          placeholder="Email">
+      </div>
+
+      <div class="form-outline">
+        <label for="role" class="form-label">Ruolo:</label>
+        <input type="text"
+          [ngModel] = "user.role"
+          class="form-control"
+          name="role"
+          placeholder="Ruolo">
+      </div>
+
+      <div class="form-outline">
+        <label for="dataCreazione" class="form-label">Data Iscrizione al sito:</label>
+        <input type="text"
+          [ngModel] = "dataCreazione"
+          class="form-control"
+          name="dataCreazione"
+          placeholder="Data Iscrizione al sito">
+      </div>
+
+      <div class="form-outline">
+        <label for="dataModifica" class="form-label">Data modifica profilo:</label>
+        <input type="text"
+          [ngModel] = "dataModifica"
+          class="form-control"
+          name="dataModifica"
+          placeholder="Data modifica profilo">
+      </div>
+
+  </form>
+</div>
+
+
+
+
 
